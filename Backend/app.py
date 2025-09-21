@@ -20,18 +20,5 @@ with app.app_context():
 
 from routes.job_routes import *
 
-@app.route("/")
-def welcome():
-    logger.info("Update 02")
-    return "Home page"
-
-@app.route("/home")
-def homepage():
-    return "This is home page"
-
-@app.route("/debugTest")
-def testFunc():
-    return "This is debugger function test"
-
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
