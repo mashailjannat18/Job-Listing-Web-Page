@@ -1,0 +1,171 @@
+.headerDiv {
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
+    padding: 0 1.25rem;
+    height: 15vh;
+    min-height: 4.375rem;
+    max-height: 6.25rem;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logoImg {
+    height: 3.5rem;
+    width: auto;
+    max-height: 5rem;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.navbarOptions {
+    height: 100%;
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.savedSpan, .messagesSpan, .notificationsSpan, .accountSpan {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saved, .messages, .notifications, .account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.saved:hover, .messages:hover, .notifications:hover, .account:hover {
+    color: #5865a2;
+    cursor: pointer;
+}
+
+.saved:hover::after, .messages:hover::after, .notifications:hover::after, .account:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #5865a2;
+    transition: all 0.2s ease;
+}
+
+.iconImg {
+    transition: all 0.2s;
+}
+
+.headerOption {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.blurred {
+    filter: blur(0.25rem);
+    pointer-events: none;
+    user-select: none;
+    transition: filter 0.3s ease;
+}
+
+@media (max-width: 968px) {
+    .navbarOptions {
+        gap: 1rem;
+    }
+    
+    .headerOption {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerDiv {
+        height: 12vh;
+        min-height: 3.75rem;
+        padding: 0 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .navbarOptions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        box-shadow: 0px 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .navbarOptions.mobile-open {
+        max-height: 18.75rem;
+    }
+    
+    .savedSpan, .messagesSpan, .notificationsSpan, .accountSpan {
+        width: 100%;
+        height: auto;
+    }
+    
+    .saved, .messages, .notifications, .account {
+        width: 100%;
+        padding: 1rem;
+        justify-content: flex-start;
+        border-bottom: 0.0625rem solid #f0f0f0;
+    }
+    
+    .saved:hover::after, .messages:hover::after, .notifications:hover::after, .account:hover::after {
+        display: none;
+    }
+    
+    .saved:hover, .messages:hover, .notifications:hover, .account:hover {
+        background-color: #f5f7fa;
+    }
+}
+
+@media (max-width: 480px) {
+    .headerDiv {
+        height: 10vh;
+        min-height: 3.125rem;
+        padding: 0 0.75rem;
+    }
+    
+    .logoImg {
+        height: 3.5rem;
+    }
+}

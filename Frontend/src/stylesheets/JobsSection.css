@@ -1,0 +1,734 @@
+.jobsContent {
+    margin: 1.5625rem 0;
+    width: 100%;
+}
+
+.beforeJobsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0 0.625rem;
+    margin-bottom: 1.25rem;
+}
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2b3260;
+    margin: 0;
+}
+
+.addJobBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #2b3260;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 0.95rem;
+    width: fit-content;
+}
+
+.addJobBtn:hover {
+    background-color: #5865a2;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(43, 50, 96, 0.2);
+}
+
+.jobsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+    gap: 1.5625rem;
+    width: 100%;
+}
+
+.jobCard {
+    padding: 1.5625rem;
+    border: 0.0625rem solid #e1e4e8;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
+}
+
+.cardHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9375rem;
+}
+
+.jobTitle {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #2b3260;
+    line-height: 1.3;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.postingTime {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.jobdetail {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.jobDetailContent {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+.companyName {
+    font-weight: 600;
+    margin-bottom: 0.3125rem;
+    color: #333;
+    font-size: 1.1rem;
+    word-break: break-word;
+}
+
+.locationPlace, .jobTypeText, .experienceLevel {
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    word-break: break-word;
+}
+
+.savedIconImg {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.savedIconImg:hover {
+    transform: scale(1.1);
+}
+
+.tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.9375rem;
+    align-items: center;
+}
+
+.tagsList::before {
+    content: "Tags:";
+    color: #555;
+    font-size: 0.95rem;
+    margin-right: 0.3125rem;
+    font-weight: 500;
+}
+
+.tagText {
+    padding: 0.3125rem 0.75rem;
+    background-color: #f0f4ff;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: #2b3260;
+    border: 0.0625rem solid #dde1f9;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.jobCardButtons {
+    margin-top: 1.875rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9375rem;
+}
+
+.editJobBtn, .deleteJobBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.editJobBtn {
+    background-color: #2b3260;
+    color: white;
+}
+
+.editJobBtn:hover {
+    background-color: #5865a2;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(43, 50, 96, 0.2);
+}
+
+.deleteJobBtn {
+    background-color: #f8f8f8;
+    color: #666;
+    border: 0.0625rem solid #e1e4e8;
+}
+
+.deleteJobBtn:hover {
+    background-color: #ffecec;
+    color: #d33;
+    border-color: #ffcccc;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(221, 51, 51, 0.1);
+}
+
+.editIconImg, .deleteIconImg {
+    transition: transform 0.2s ease;
+}
+
+.editJobBtn:hover .editIconImg,
+.deleteJobBtn:hover .deleteIconImg {
+    transform: scale(1.1);
+}
+
+.blurred {
+    filter: blur(0.25rem);
+    pointer-events: none;
+    user-select: none;
+    transition: filter 0.3s ease;
+}
+
+.editJobFormOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.editJobFormContainer {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 50rem;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+}
+
+.editFormHeader {
+    padding: 1.875rem 1.875rem 1.25rem;
+    border-bottom: 0.0625rem solid #f0f2f5;
+    background: #2b3260;
+    color: white;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.editFormHeader h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.editFormSubtitle {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.editJobForm {
+    padding: 1.875rem 1.875rem 0 1.875rem;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.875rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.formLabel {
+    font-weight: 600;
+    color: #2b3260;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.formInput {
+    padding: 0.5rem 0.8125rem;
+    border: 0.125rem solid #e1e4e8;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    background: #f9fafc;
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: #2b3260;
+    background: white;
+    box-shadow: 0 0 0 0.1875rem rgba(102, 126, 234, 0.1);
+}
+
+.dropdownWrapper {
+    position: relative;
+    display: flex;
+}
+
+.dropdownToggle {
+    width: 100%;
+    padding: 0.5rem 0.8125rem;
+    border: 0.125rem solid #e1e4e8;
+    border-radius: 0.625rem;
+    background: #f9fafc;
+    text-align: left;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.dropdownToggle.hasSelection {
+    background: #f0f7ff;
+    border-color: #5865a2;
+}
+
+.dropdownToggle.open {
+    border-bottom: transparent;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropdownToggle:hover {
+    border-color: #5865a2;
+}
+
+.dropdownArrow {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdownArrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 0.125rem solid #5865a2;
+    border-top: none;
+    border-radius: 0 0 0.625rem 0.625rem;
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 12.5rem;
+    overflow-y: auto;
+    margin-top: -0.125rem;
+}
+
+.dropdownItem {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 0.0625rem solid #f0f2f5;
+}
+
+.dropdownItem:last-child {
+    border-bottom: none;
+}
+
+.dropdownItem:hover {
+    background: #f9fafc;
+}
+
+.dropdownItem.selected {
+    background: #5865a2;
+    color: white;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+    margin-top: 0.3125rem;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.checkboxLabel:hover {
+    color: #2b3260;
+}
+
+.checkboxInput {
+    display: none;
+}
+
+.checkboxCustom {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0.125rem solid #e1e4e8;
+    border-radius: 0.3125rem;
+    margin-right: 0.625rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkboxInput:checked + .checkboxCustom {
+    background: #2b3260;
+    border-color: #2b3260;
+}
+
+.checkboxInput:checked + .checkboxCustom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.tagsInputWrapper {
+    margin-top: 0.3125rem;
+}
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 0.125rem solid #e1e4e8;
+    border-radius: 0.625rem;
+    background: #f9fafc;
+    min-height: 3rem;
+    align-items: center;
+}
+
+.tagsContainer:focus-within {
+    border-color: #2b3260;
+    background: white;
+}
+
+.tagItem {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e6e9f5;
+    color: #2b3260;
+    padding: 0.375rem 0.75rem;
+    border-radius: 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tagRemove {
+    background: none;
+    border: none;
+    color: #2b3260;
+    margin-left: 0.375rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.tagRemove:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.tagInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.25rem;
+    background: transparent;
+    min-width: 6.25rem;
+    font-size: 0.875rem;
+}
+
+.inputHint {
+    margin-top: 0.375rem;
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.9375rem;
+    padding: 0 1.875rem 1.25rem 1.875rem;
+    border-top: 0.0625rem solid #f0f2f5;
+}
+
+.cancelButton, .saveButton {
+    padding: 0.75rem 1.875rem;
+    border: none;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.cancelButton {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 0.125rem solid #e9ecef;
+}
+
+.cancelButton:hover {
+    background: #e9ecef;
+    transform: translateY(-0.125rem);
+}
+
+.saveButton {
+    background: #2b3260;
+    color: white;
+    box-shadow: 0 0.25rem 0.9375rem rgba(102, 126, 234, 0.3);
+}
+
+.saveButton:hover {
+    background-color: #5865a2;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.375rem 1.25rem rgba(102, 126, 234, 0.4);
+}
+
+.loading {
+    text-align: center;
+    padding: 2.5rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.confirmationOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.confirmationDialog {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.875rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 28.125rem;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+}
+
+.confirmationDialog h3 {
+    margin: 0 0 0.9375rem;
+    color: #2b3260;
+    font-size: 1.5rem;
+}
+
+.confirmationDialog p {
+    margin: 0 0 1.5625rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.confirmationButtons {
+    display: flex;
+    justify-content: center;
+    gap: 0.9375rem;
+}
+
+.confirmDeleteButton, .confirmSaveButton {
+    padding: 0.75rem 1.875rem;
+    border: none;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.confirmDeleteButton {
+    background: #d33;
+    color: white;
+}
+
+.confirmDeleteButton:hover {
+    background: #b22;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.9375rem rgba(221, 51, 51, 0.3);
+}
+
+.confirmSaveButton {
+    background: #2b3260;
+    color: white;
+    box-shadow: 0 0.25rem 0.9375rem rgba(102, 126, 234, 0.3);
+}
+
+.confirmSaveButton:hover {
+    background-color: #5865a2;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.375rem 1.25rem rgba(102, 126, 234, 0.4);
+}
+
+@media (min-width: 768px) {
+    .beforeJobsList {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .jobCardButtons {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9375rem;
+    }
+    
+    .formGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .jobsList {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .jobCard {
+        padding: 1.25rem;
+    }
+    
+    .editJobFormContainer {
+        max-height: 85vh;
+    }
+    
+    .editFormHeader {
+        padding: 1.25rem 1.25rem 1rem;
+    }
+    
+    .editJobForm {
+        padding: 1.25rem 1.25rem 0 1.25rem;
+    }
+    
+    .formActions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .cancelButton, .saveButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .jobsList {
+        grid-template-columns: 1fr;
+    }
+    
+    .jobCard {
+        padding: 1rem;
+    }
+    
+    .editJobFormContainer {
+        border-radius: 0.75rem;
+    }
+    
+    .editFormHeader {
+        padding: 1rem 1rem 0.75rem;
+    }
+    
+    .editFormHeader h2 {
+        font-size: 1.3rem;
+    }
+    
+    .editJobForm {
+        padding: 1rem 1rem 0 1rem;
+    }
+    
+    .formGrid {
+        gap: 1rem;
+    }
+    
+    .confirmationDialog {
+        padding: 1.5rem;
+    }
+    
+    .confirmationDialog h3 {
+        font-size: 1.3rem;
+    }
+    
+    .confirmationButtons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .cancelButton, .confirmDeleteButton, .confirmSaveButton {
+        width: 100%;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.875rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

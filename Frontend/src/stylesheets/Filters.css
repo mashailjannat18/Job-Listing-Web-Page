@@ -1,0 +1,239 @@
+.filtersSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.0625rem;
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.08);
+    margin: 1.25rem 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    background-color: #f5f7fa;
+    padding: 0 0.9375rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #e1e4e8;
+    transition: all 0.3s ease;
+    height: 2.5rem;
+    min-width: 15.625rem;
+    flex-grow: 1;
+}
+
+.searchBar:focus-within {
+    border-color: #5865a2;
+    box-shadow: 0 0 0 0.1875rem rgba(88, 101, 162, 0.2);
+}
+
+.searchInputField {
+    height: 100%;
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.searchInputField:focus {
+    outline: none;
+}
+
+.dropdowns-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.0625rem;
+    flex-grow: 2;
+}
+
+.dropdownContainer {
+    position: relative;
+    min-width: 12.5rem;
+    flex-grow: 1;
+}
+
+.dropdownTog {
+    width: 100%;
+    padding: 0.625rem 0.9375rem;
+    background-color: white;
+    border: 0.0625rem solid #e1e4e8;
+    border-radius: 0.5rem;
+    text-align: left;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    height: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.dropdownTog:hover {
+    border-color: #5865a2;
+    color: #2b3260;
+}
+
+.dropdown-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 0.9rem;
+}
+
+.dropdown-indicators {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+.dropdown-arrow {
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 0.0625rem solid #e1e4e8;
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 15.625rem;
+    overflow-y: auto;
+    padding: 0.3125rem 0;
+}
+
+.dropdown-option {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.9375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 0.0625rem solid #f0f2f5;
+    font-size: 0.9rem;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background-color: #f9fafc;
+}
+
+.dropdown-option input {
+    margin-right: 0.625rem;
+    accent-color: #2b3260;
+}
+
+.counterCircle {
+    height: 1.25rem;
+    min-width: 1.25rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #2b3260;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0 0.125rem;
+    box-sizing: border-box;
+}
+
+.dropdownTog.itemsSelected {
+    color: white;
+    background-color: #2b3260;
+    border-color: #2b3260;
+}
+
+.dropdownTog.itemsSelected .counterCircle {
+    background-color: white;
+    color: #2b3260;
+}
+
+.contentDropdownFalse {
+    display: none;
+}
+
+.selectedItem {
+    color: #2b3260;
+    font-weight: 700;
+}
+
+.circleSelected {
+    display: flex;
+}
+
+.blurred {
+    filter: blur(0.25rem);
+    pointer-events: none;
+    user-select: none;
+    transition: filter 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .dropdowns-container {
+        gap: 0.8rem;
+    }
+    
+    .dropdownContainer {
+        min-width: 11rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .filtersSection {
+        flex-direction: column;
+    }
+    
+    .searchBar {
+        min-width: 100%;
+    }
+    
+    .dropdowns-container {
+        width: 100%;
+    }
+    
+    .dropdownContainer {
+        min-width: calc(50% - 0.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .filtersSection {
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+    }
+    
+    .searchBar {
+        height: 2.25rem;
+        padding: 0 0.75rem;
+    }
+    
+    .dropdownTog {
+        height: 2.25rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}

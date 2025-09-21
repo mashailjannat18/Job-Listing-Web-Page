@@ -1,0 +1,40 @@
+.afterHeader {
+    width: 100%;
+    padding: 15vh 0 0 0;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+    .content-container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .afterHeader {
+        padding: 12vh 0 0 0;
+    }
+    
+    .content-container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .afterHeader {
+        padding: 10vh 0 0 0;
+    }
+    
+    .content-container {
+        padding: 0 0.75rem;
+    }
+}
